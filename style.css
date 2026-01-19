@@ -1,0 +1,18 @@
+h1{
+    color: red;
+}
+nav{
+    font-size:larger;
+}
+html{
+    text-align: center;
+    background-color: blanchedalmond;
+}
+#ppp{
+    text-align: left;
+
+    border: 2px;
+    border-color: blue;
+    border-radius: 20px;
+    border-style: solid;
+}
