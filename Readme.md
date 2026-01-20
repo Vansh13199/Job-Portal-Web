@@ -1,5 +1,7 @@
 ## 🌐 Live Demo
 
 The project is deployed on **Netlify** and can be accessed here:  
-👉 https://jobfinder11.netlify.app/
+👉 
+<a href="https://jobfinder11.netlify.app/" target="_blank">https://jobfinder11.netlify.app/</a>
+
 
