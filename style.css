@@ -1,18 +1,102 @@
-h1{
-    color: red;
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
 }
-nav{
-    font-size:larger;
-}
-html{
-    text-align: center;
-    background-color: blanchedalmond;
-}
-#ppp{
-    text-align: left;
 
-    border: 2px;
-    border-color: blue;
-    border-radius: 20px;
-    border-style: solid;
+body {
+    background-color: #f2f2f2;
+}
+
+nav {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+.search-box {
+    text-align: center;
+    margin: 20px;
+}
+
+.search-box input {
+    padding: 8px;
+    margin: 5px;
+}
+
+.search-box button {
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+}
+
+.jobs {
+    text-align: center;
+}
+
+.job-card {
+    background-color: white;
+    width: 250px;
+    margin: 15px auto;
+    padding: 15px;
+}
+
+.job-card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: white;
+    background-color: #333;
+    padding: 6px 10px;
+    text-decoration: none;
+}
+
+h2 {
+    text-align: center;
+    margin: 20px;
+}
+
+form {
+    background-color: white;
+    width: 280px;
+    margin: auto;
+    padding: 20px;
+}
+
+form input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    margin-top: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 30px;
 }
