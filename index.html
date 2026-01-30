@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>JobFinder</title>
@@ -7,71 +8,84 @@
 </head>
 
 <body>
-<nav>
-  <a href="./home.html">Home</a>
-  <a href="./jobs.html">Jobs</a>
-  <a href="./Companies.html">Companies</a>
-  <a href="Login.html">Login</a>
-</nav>
+    <nav>
+        <a href="./home.html">Home</a>
+        <a href="#">Jobs</a>
+        <a href="#">Companies</a>
+        <a href="Login.html">Login</a>
+    </nav>
 
-<header>
-    <h1>JobFinder</h1>
-    <p>Find your dream job</p>
-</header>
+    <header>
+        <h1>HireHub</h1>
+        <p>Find your dream job</p>
+    </header>
 
-<section class="search-box">
-    <input type="text" placeholder="Job title">
-    <input type="text" placeholder="Location">
-    <button>Search</button>
-</section>
+    <section class="search-box">
+        <select id="job-role">
+            <option value="">Select Job Role</option>
+            <option value="frontend">Frontend Developer</option>
+            <option value="backend">Backend Developer</option>
+            <option value="intern">Intern - Web Development</option>
+        </select>
+        <select id="job-location">
+            <option value="">Select Location</option>
+            <option value="bangalore">Bangalore</option>
+            <option value="pune">Pune</option>
+            <option value="remote">Remote</option>
+        </select>
+        <button>Search</button>
+    </section>
 
-<section class="jobs">
-    <div class="job-card">
-        <h3>Frontend Developer</h3>
-        <p>Company: TechSoft</p>
-        <p>Location: Remote</p>
-        <a href="#">Apply Now</a>
-    </div>
+    <section class="jobs">
+        <div class="job-card">
+            <h3>Frontend Developer</h3>
+            <p>Company: TechSoft</p>
+            <p>Location: Remote</p>
+            <a href="#">Apply Now</a>
+        </div>
 
-    <div class="job-card">
-        <h3>Backend Developer</h3>
-        <p>Company: CodeWorks</p>
-        <p>Location: Bangalore</p>
-        <a href="#">Apply Now</a>
-    </div>
+        <div class="job-card">
+            <h3>Backend Developer</h3>
+            <p>Company: CodeWorks</p>
+            <p>Location: Bangalore</p>
+            <a href="#">Apply Now</a>
+        </div>
 
-    <div class="job-card">
-        <h3>Intern - Web Development</h3>
-        <p>Company: StartupHub</p>
-        <p>Location: Pune</p>
-        <a href="#">Apply Now</a>
-    </div>
-    <div class="job-card">
-        <h3>Frontend Developer</h3>
-        <p>Company: TechSoft</p>
-        <p>Location: Remote</p>
-        <a href="#">Apply Now</a>
-    </div>
+        <div class="job-card">
+            <h3>Intern - Web Development</h3>
+            <p>Company: StartupHub</p>
+            <p>Location: Pune</p>
+            <a href="#">Apply Now</a>
+        </div>
+        <div class="job-card">
+            <h3>Frontend Developer</h3>
+            <p>Company: TechSoft</p>
+            <p>Location: Remote</p>
+            <a href="#">Apply Now</a>
+        </div>
 
-    <div class="job-card">
-        <h3>Backend Developer</h3>
-        <p>Company: CodeWorks</p>
-        <p>Location: Bangalore</p>
-        <a href="#">Apply Now</a>
-    </div>
+        <div class="job-card">
+            <h3>Backend Developer</h3>
+            <p>Company: CodeWorks</p>
+            <p>Location: Bangalore</p>
+            <a href="#">Apply Now</a>
+        </div>
 
-    <div class="job-card">
-        <h3>Intern - Web Development</h3>
-        <p>Company: StartupHub</p>
-        <p>Location: Pune</p>
-        <a href="#">Apply Now</a>
-    </div>
-</section>
-</section>
+        <div class="job-card">
+            <h3>Intern - Web Development</h3>
+            <p>Company: StartupHub</p>
+            <p>Location: Pune</p>
+            <a href="#">Apply Now</a>
+        </div>
+    </section>
+    </section>
 
-<footer>
-    <p id="ppp">© 2026 JobFinder</p>
-</footer>
+    <footer>
+        <p id="ppp">© 2026 HireHub</p>
+    </footer>
+
+
 
 </body>
+
 </html>

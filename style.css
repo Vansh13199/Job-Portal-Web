@@ -36,7 +36,7 @@ header {
     margin: 20px;
 }
 
-.search-box input {
+.search-box input, .search-box select {
     padding: 8px;
     margin: 5px;
 }
