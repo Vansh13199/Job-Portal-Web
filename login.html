@@ -5,53 +5,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - HireHub</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { poppins: ['Poppins', 'sans-serif'] },
+                    colors: {
+                        primary: '#6C63FF',
+                        'primary-dark': '#4834d4',
+                        secondary: '#FF6584',
+                        'secondary-dark': '#ff4769',
+                        'dark-bg': '#1a1a2e',
+                        'light-bg': '#f0f2f5',
+                    },
+                },
+            },
+        }
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="font-poppins bg-light-bg text-gray-800 overflow-x-hidden scroll-smooth">
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="logo">HireHub</div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#jobs">Jobs</a></li>
-            <li><a href="index.html#post-job" class="btn-highlight">Post a Job</a></li>
-            <li><a href="#" class="active">Login</a></li>
+    <nav
+        class="flex justify-between items-center py-5 px-[5%] fixed w-full top-0 z-[1000] bg-white/85 backdrop-blur-[10px] shadow-md transition-all duration-300">
+        <div
+            class="text-3xl font-bold bg-gradient-to-br from-primary to-primary-dark bg-clip-text text-transparent cursor-pointer">
+            HireHub</div>
+        <ul class="list-none flex max-md:hidden">
+            <li class="ml-8"><a href="index.html"
+                    class="no-underline text-gray-800 font-medium text-base transition-colors duration-300 hover:text-primary">Home</a>
+            </li>
+            <li class="ml-8"><a href="index.html#jobs"
+                    class="no-underline text-gray-800 font-medium text-base transition-colors duration-300 hover:text-primary">Jobs</a>
+            </li>
+            <li class="ml-8"><a href="index.html#post-job"
+                    class="no-underline font-medium text-base py-2 px-5 bg-gradient-to-br from-primary to-primary-dark text-white rounded-full transition-transform duration-300 hover:-translate-y-0.5 hover:shadow-[0_4px_15px_rgba(108,99,255,0.4)]">Post
+                    a Job</a></li>
+            <li class="ml-8"><a href="#"
+                    class="no-underline text-primary font-semibold text-base transition-colors duration-300">Login</a>
+            </li>
         </ul>
     </nav>
 
-    <!-- Login Section -->
-    <div class="login-container">
-        <div class="login-box glass-card">
-            <h2>Welcome Back</h2>
-            <p>Login to your account to continue</p>
+    <div class="login-container h-screen flex justify-center items-center bg-cover bg-center">
+        <div
+            class="w-full max-w-[400px] p-10 text-center bg-white/95 backdrop-blur-[10px] border border-white/30 rounded-2xl shadow-[0_8px_32px_0_rgba(31,38,135,0.15)]">
+            <h2 class="text-2xl font-bold mb-1 text-gray-800">Welcome Back</h2>
+            <p class="mb-8 text-gray-500 text-sm">Login to your account to continue</p>
 
             <form id="login-form">
-                <div class="input-group">
-                    <input type="email" id="email" placeholder=" " required>
-                    <label for="email">Email Address</label>
+                <div class="input-group relative mb-6">
+                    <input type="email" id="email" placeholder=" " required
+                        class="w-full py-3 px-4 border-2 border-gray-200 rounded-lg outline-none text-base bg-transparent transition-colors duration-300 focus:border-primary peer">
+                    <label for="email"
+                        class="absolute left-4 top-3 text-gray-400 pointer-events-none transition-all duration-300 bg-white px-1 peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-primary peer-focus:font-semibold peer-[:not(:placeholder-shown)]:-top-2.5 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-primary peer-[:not(:placeholder-shown)]:font-semibold">Email
+                        Address</label>
                 </div>
 
-                <div class="input-group">
-                    <input type="password" id="password" placeholder=" " required>
-                    <label for="password">Password</label>
+                <div class="input-group relative mb-6">
+                    <input type="password" id="password" placeholder=" " required
+                        class="w-full py-3 px-4 border-2 border-gray-200 rounded-lg outline-none text-base bg-transparent transition-colors duration-300 focus:border-primary peer">
+                    <label for="password"
+                        class="absolute left-4 top-3 text-gray-400 pointer-events-none transition-all duration-300 bg-white px-1 peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-primary peer-focus:font-semibold peer-[:not(:placeholder-shown)]:-top-2.5 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-primary peer-[:not(:placeholder-shown)]:font-semibold">Password</label>
                 </div>
 
-                <div class="form-options">
-                    <label class="checkbox-container">Remember me
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
+                <div class="flex justify-between items-center text-xs mb-5 text-gray-600">
+                    <label class="flex items-center gap-1.5 cursor-pointer">Remember me
+                        <input type="checkbox" class="accent-primary">
                     </label>
-                    <a href="#" class="forgot-password">Forgot Password?</a>
+                    <a href="#" class="text-primary no-underline font-medium hover:underline">Forgot Password?</a>
                 </div>
 
-                <button type="submit" class="submit-btn">Login</button>
+                <button type="submit" id="submit-btn"
+                    class="w-full py-3 bg-gradient-to-br from-primary to-primary-dark text-white border-none rounded-lg text-lg font-semibold cursor-pointer transition-all duration-300 hover:shadow-[0_5px_15px_rgba(108,99,255,0.4)] hover:-translate-y-0.5">Login</button>
 
-                <div class="register-link">
-                    <p>Don't have an account? <a href="#">Register here</a></p>
+                <div class="mt-5 text-sm">
+                    <p>Don't have an account? <a href="#"
+                            class="text-primary no-underline font-semibold hover:underline">Register here</a></p>
                 </div>
             </form>
         </div>

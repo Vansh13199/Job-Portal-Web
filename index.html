@@ -5,121 +5,219 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HireHub - Find Your Dream Job</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { poppins: ['Poppins', 'sans-serif'] },
+                    colors: {
+                        primary: '#6C63FF',
+                        'primary-dark': '#4834d4',
+                        secondary: '#FF6584',
+                        'secondary-dark': '#ff4769',
+                        'dark-bg': '#1a1a2e',
+                        'light-bg': '#f0f2f5',
+                    },
+                },
+            },
+        }
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="font-poppins bg-light-bg text-gray-800 overflow-x-hidden scroll-smooth">
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="logo">HireHub</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#jobs">Jobs</a></li>
-            <li><a href="#post-job" class="btn-highlight">Post a Job</a></li>
-            <li><a href="Login.html">Login</a></li>
+    <nav
+        class="navbar flex justify-between items-center py-5 px-[5%] fixed w-full top-0 z-[1000] bg-white/85 backdrop-blur-[10px] shadow-md transition-all duration-300">
+        <div
+            class="text-3xl font-bold bg-gradient-to-br from-primary to-primary-dark bg-clip-text text-transparent cursor-pointer">
+            HireHub</div>
+        <ul class="nav-links list-none flex max-md:hidden">
+            <li class="ml-8"><a href="#home"
+                    class="no-underline text-gray-800 font-medium text-base transition-colors duration-300 hover:text-primary">Home</a>
+            </li>
+            <li class="ml-8"><a href="#jobs"
+                    class="no-underline text-gray-800 font-medium text-base transition-colors duration-300 hover:text-primary">Jobs</a>
+            </li>
+            <li class="ml-8"><a href="#post-job"
+                    class="no-underline font-medium text-base py-2 px-5 bg-gradient-to-br from-primary to-primary-dark text-white rounded-full transition-transform duration-300 hover:-translate-y-0.5 hover:shadow-[0_4px_15px_rgba(108,99,255,0.4)]">Post
+                    a Job</a></li>
+            <li class="ml-8"><a href="Login.html"
+                    class="no-underline text-gray-800 font-medium text-base transition-colors duration-300 hover:text-primary">Login</a>
+            </li>
         </ul>
-        <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
+        <div class="burger hidden max-md:block cursor-pointer">
+            <div class="w-6 h-0.5 bg-gray-800 my-1"></div>
+            <div class="w-6 h-0.5 bg-gray-800 my-1"></div>
+            <div class="w-6 h-0.5 bg-gray-800 my-1"></div>
         </div>
     </nav>
 
-    <!-- Parallax Hero Section -->
-    <header id="home" class="hero">
-        <div class="hero-content">
-            <h1>Find Your <span class="highlight">Dream Job</span></h1>
-            <p>Connecting talent with opportunity across the globe.</p>
-            <a href="#jobs" class="cta-button">Browse Jobs</a>
+    <header id="home"
+        class="hero h-screen flex items-center justify-center text-center text-white bg-fixed bg-center bg-no-repeat bg-cover">
+        <div class="hero-content max-w-[800px] p-5 animate-fadeInUp">
+            <h1 class="text-4xl md:text-6xl font-bold mb-5 leading-tight">Find Your <span class="text-secondary">Dream
+                    Job</span></h1>
+            <p class="text-lg mb-8 opacity-90">Connecting talent with opportunity across the globe.</p>
+            <a href="#jobs"
+                class="inline-block py-3 px-8 bg-secondary text-white text-lg font-semibold no-underline rounded-full transition-all duration-300 shadow-[0_5px_15px_rgba(255,101,132,0.4)] hover:-translate-y-1 hover:bg-secondary-dark">Browse
+                Jobs</a>
         </div>
     </header>
 
     <main>
-        <!-- Search Section -->
-        <section class="search-section">
-            <div class="search-container glass-card">
-                <select id="job-role">
-                    <option value="">Select Job Role</option>
-                    <option value="frontend">Frontend Developer</option>
-                    <option value="backend">Backend Developer</option>
-                    <option value="intern">Intern - Web Development</option>
-                </select>
-                <select id="job-location">
-                    <option value="">Select Location</option>
-                    <option value="bangalore">Bangalore</option>
-                    <option value="pune">Pune</option>
-                    <option value="remote">Remote</option>
-                </select>
-                <button class="search-btn"><i class="fas fa-search"></i> Search</button>
+        <section class="relative -mt-12 z-10 px-[5%]">
+            <div
+                class="search-container flex flex-col py-6 px-8 gap-4 max-w-[1000px] mx-auto bg-white/95 backdrop-blur-[10px] border border-white/30 rounded-2xl shadow-[0_8px_32px_0_rgba(31,38,135,0.15)]">
+                <div class="search-row flex gap-3 items-center max-md:flex-col">
+                    <div class="flex-1 relative w-full">
+                        <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+                        <input type="text" id="keyword-search" placeholder="Search by title, company, or keyword…"
+                            class="w-full py-3 pr-5 pl-10 border-2 border-gray-200 rounded-full text-base outline-none transition-all duration-300 bg-white focus:border-primary focus:shadow-[0_0_0_3px_rgba(108,99,255,0.12)]">
+                    </div>
+                    <button id="search-btn"
+                        class="py-3 px-7 bg-gradient-to-br from-primary to-primary-dark text-white border-none rounded-full text-base font-semibold cursor-pointer transition-all duration-300 whitespace-nowrap hover:scale-105 hover:shadow-[0_4px_18px_rgba(108,99,255,0.35)]"><i
+                            class="fas fa-search"></i> Search</button>
+                    <button id="clear-btn"
+                        class="py-3 px-6 bg-transparent text-primary border-2 border-primary rounded-full text-base font-semibold cursor-pointer transition-all duration-300 whitespace-nowrap hover:bg-primary hover:text-white"><i
+                            class="fas fa-times"></i> Clear</button>
+                </div>
+                <div class="filter-row flex flex-wrap gap-3 max-md:flex-col">
+                    <select id="job-role"
+                        class="py-2.5 px-4 border border-gray-300 rounded-full text-sm outline-none flex-1 min-w-[160px] cursor-pointer bg-white transition-colors duration-300 focus:border-primary">
+                        <option value="">All Roles</option>
+                        <option value="frontend">Frontend Developer</option>
+                        <option value="backend">Backend Developer</option>
+                        <option value="fullstack">Full Stack Developer</option>
+                        <option value="uiux">UI/UX Designer</option>
+                        <option value="data">Data Analyst</option>
+                        <option value="devops">DevOps Engineer</option>
+                        <option value="intern">Intern</option>
+                    </select>
+                    <select id="job-location"
+                        class="py-2.5 px-4 border border-gray-300 rounded-full text-sm outline-none flex-1 min-w-[160px] cursor-pointer bg-white transition-colors duration-300 focus:border-primary">
+                        <option value="">All Locations</option>
+                        <option value="bangalore">Bangalore</option>
+                        <option value="mumbai">Mumbai</option>
+                        <option value="pune">Pune</option>
+                        <option value="hyderabad">Hyderabad</option>
+                        <option value="delhi">Delhi NCR</option>
+                        <option value="remote">Remote</option>
+                    </select>
+                    <select id="job-type"
+                        class="py-2.5 px-4 border border-gray-300 rounded-full text-sm outline-none flex-1 min-w-[160px] cursor-pointer bg-white transition-colors duration-300 focus:border-primary">
+                        <option value="">All Types</option>
+                        <option value="full-time">Full-time</option>
+                        <option value="part-time">Part-time</option>
+                        <option value="internship">Internship</option>
+                        <option value="contract">Contract</option>
+                    </select>
+                    <select id="salary-range"
+                        class="py-2.5 px-4 border border-gray-300 rounded-full text-sm outline-none flex-1 min-w-[160px] cursor-pointer bg-white transition-colors duration-300 focus:border-primary">
+                        <option value="">Any Salary</option>
+                        <option value="0-3">0 – 3 LPA</option>
+                        <option value="3-6">3 – 6 LPA</option>
+                        <option value="6-10">6 – 10 LPA</option>
+                        <option value="10+">10+ LPA</option>
+                    </select>
+                </div>
             </div>
         </section>
 
-        <!-- Post Job Section -->
-        <section id="post-job" class="post-job-section">
-            <div class="post-job-container glass-card">
-                <h2><i class="fas fa-briefcase"></i> Post a New Job</h2>
+        <section id="post-job" class="py-20 px-[5%] bg-gray-50">
+            <div
+                class="max-w-[600px] mx-auto p-10 text-center bg-white/95 backdrop-blur-[10px] border border-white/30 rounded-2xl shadow-[0_8px_32px_0_rgba(31,38,135,0.15)]">
+                <h2 class="mb-8 text-primary text-2xl font-bold"><i class="fas fa-briefcase"></i> Post a New Job</h2>
                 <form id="job-form">
-                    <div class="input-group">
-                        <input type="text" id="title" placeholder=" " required>
-                        <label for="title">Job Title</label>
+                    <div class="input-group relative mb-6">
+                        <input type="text" id="title" placeholder=" " required
+                            class="w-full py-3 px-4 border-2 border-gray-200 rounded-lg outline-none text-base bg-transparent transition-colors duration-300 focus:border-primary peer">
+                        <label for="title"
+                            class="absolute left-4 top-3 text-gray-400 pointer-events-none transition-all duration-300 bg-white px-1 peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-primary peer-focus:font-semibold peer-[:not(:placeholder-shown)]:-top-2.5 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-primary peer-[:not(:placeholder-shown)]:font-semibold">Job
+                            Title</label>
                     </div>
-                    <div class="input-group">
-                        <input type="text" id="company" placeholder=" " required>
-                        <label for="company">Company Name</label>
+                    <div class="input-group relative mb-6">
+                        <input type="text" id="company" placeholder=" " required
+                            class="w-full py-3 px-4 border-2 border-gray-200 rounded-lg outline-none text-base bg-transparent transition-colors duration-300 focus:border-primary peer">
+                        <label for="company"
+                            class="absolute left-4 top-3 text-gray-400 pointer-events-none transition-all duration-300 bg-white px-1 peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-primary peer-focus:font-semibold peer-[:not(:placeholder-shown)]:-top-2.5 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-primary peer-[:not(:placeholder-shown)]:font-semibold">Company
+                            Name</label>
                     </div>
-                    <div class="input-group">
-                        <input type="text" id="location" placeholder=" " required>
-                        <label for="location">Location</label>
+                    <div class="input-group relative mb-6">
+                        <input type="text" id="location" placeholder=" " required
+                            class="w-full py-3 px-4 border-2 border-gray-200 rounded-lg outline-none text-base bg-transparent transition-colors duration-300 focus:border-primary peer">
+                        <label for="location"
+                            class="absolute left-4 top-3 text-gray-400 pointer-events-none transition-all duration-300 bg-white px-1 peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-primary peer-focus:font-semibold peer-[:not(:placeholder-shown)]:-top-2.5 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-primary peer-[:not(:placeholder-shown)]:font-semibold">Location</label>
                     </div>
-                    <div class="input-group">
-                        <textarea id="description" placeholder=" " rows="4" required></textarea>
-                        <label for="description">Job Description</label>
+                    <div class="input-group relative mb-6">
+                        <textarea id="description" placeholder=" " rows="4" required
+                            class="w-full py-3 px-4 border-2 border-gray-200 rounded-lg outline-none text-base bg-transparent transition-colors duration-300 resize-y focus:border-primary peer"></textarea>
+                        <label for="description"
+                            class="absolute left-4 top-3 text-gray-400 pointer-events-none transition-all duration-300 bg-white px-1 peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-primary peer-focus:font-semibold peer-[:not(:placeholder-shown)]:-top-2.5 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-primary peer-[:not(:placeholder-shown)]:font-semibold">Job
+                            Description</label>
                     </div>
-                    <input type="submit" value="Post Job" class="submit-btn">
+                    <div class="flex gap-4 max-md:flex-col">
+                        <div class="flex-1">
+                            <select id="post-job-type" required
+                                class="w-full py-3 px-4 border-2 border-gray-200 rounded-lg outline-none text-base bg-transparent transition-colors duration-300 cursor-pointer text-gray-600 focus:border-primary">
+                                <option value="" disabled selected>Job Type</option>
+                                <option value="full-time">Full-time</option>
+                                <option value="part-time">Part-time</option>
+                                <option value="internship">Internship</option>
+                                <option value="contract">Contract</option>
+                            </select>
+                        </div>
+                        <div class="flex-1">
+                            <select id="post-salary-range" required
+                                class="w-full py-3 px-4 border-2 border-gray-200 rounded-lg outline-none text-base bg-transparent transition-colors duration-300 cursor-pointer text-gray-600 focus:border-primary">
+                                <option value="" disabled selected>Salary Range</option>
+                                <option value="0-3">0 – 3 LPA</option>
+                                <option value="3-6">3 – 6 LPA</option>
+                                <option value="6-10">6 – 10 LPA</option>
+                                <option value="10+">10+ LPA</option>
+                            </select>
+                        </div>
+                    </div>
+                    <input type="submit" value="Post Job"
+                        class="w-full py-3 mt-6 bg-gradient-to-br from-primary to-primary-dark text-white border-none rounded-lg text-lg font-semibold cursor-pointer transition-all duration-300 hover:shadow-[0_5px_15px_rgba(108,99,255,0.4)] hover:-translate-y-0.5">
                 </form>
             </div>
         </section>
 
-        <!-- Job Listings -->
-        <section id="jobs" class="jobs-section">
-            <h2 class="section-title">Design Your Future</h2>
-            <div class="jobs">
-                <!-- Dynamic Job Cards will appear here -->
-
-                <!-- Static Examples for Design -->
-                <div class="job-card">
-                    <h3>Frontend Developer</h3>
-                    <p class="company"><i class="fas fa-building"></i> TechSoft</p>
-                    <p class="location"><i class="fas fa-map-marker-alt"></i> Remote</p>
-                    <p class="job-desc">We are looking for a skilled Frontend Developer with React experience.</p>
-                    <div class="job-actions">
-                        <button class="apply-btn">Apply Now</button>
-                    </div>
-                </div>
-
-                <div class="job-card">
-                    <h3>Backend Developer</h3>
-                    <p class="company"><i class="fas fa-building"></i> CodeWorks</p>
-                    <p class="location"><i class="fas fa-map-marker-alt"></i> Bangalore</p>
-                    <p class="job-desc">Join our backend team to build scalable APIs using Node.js.</p>
-                    <div class="job-actions">
-                        <button class="apply-btn">Apply Now</button>
-                    </div>
-                </div>
+        <section id="jobs" class="py-20 px-[5%] bg-white">
+            <div
+                class="flex items-baseline justify-between flex-wrap gap-2.5 mb-2.5 max-md:flex-col max-md:items-start">
+                <h2 class="text-center text-4xl mb-12 text-gray-800 relative section-title">Design Your Future</h2>
+                <p id="results-count" class="text-base text-gray-400 font-medium"></p>
+            </div>
+            <div id="active-filters" class="flex flex-wrap gap-2 mb-5"></div>
+            <div id="search-results"
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1200px] mx-auto">
+            </div>
+            <div id="empty-state"
+                class="flex flex-col items-center justify-center py-16 px-5 text-gray-400 text-center gap-3"
+                style="display:none;">
+                <i class="fas fa-briefcase text-5xl opacity-35"></i>
+                <h3 class="text-xl text-gray-500">No jobs found</h3>
+                <p class="text-sm text-gray-400">Try adjusting your filters or search keyword.</p>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
+    <footer class="bg-dark-bg text-white py-10 px-[5%] text-center">
+        <div class="flex flex-col items-center gap-5">
             <p>&copy; 2026 HireHub. All rights reserved.</p>
-            <div class="socials">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <div class="flex gap-5">
+                <a href="#" class="text-white text-xl transition-colors duration-300 hover:text-secondary"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-white text-xl transition-colors duration-300 hover:text-secondary"><i
+                        class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white text-xl transition-colors duration-300 hover:text-secondary"><i
+                        class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
     </footer>

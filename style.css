@@ -1,304 +1,12 @@
-/* Google Fonts Import */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-:root {
-    --primary-color: #6C63FF;
-    --secondary-color: #FF6584;
-    --dark-bg: #1a1a2e;
-    --light-bg: #f0f2f5;
-    /* clean light gray for sections */
-    --text-color: #333;
-    --glass-bg: rgba(255, 255, 255, 0.95);
-    --glass-border: rgba(255, 255, 255, 0.3);
-    --gradient: linear-gradient(135deg, #6C63FF 0%, #4834d4 100%);
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    scroll-behavior: smooth;
-}
-
-body {
-    background-color: var(--light-bg);
-    color: var(--text-color);
-    overflow-x: hidden;
-}
-
-/* Navigation */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.2rem 5%;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    background: rgba(255, 255, 255, 0.85);
-    /* Glassmorphism for nav */
-    backdrop-filter: blur(10px);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
-
-.navbar .logo {
-    font-size: 1.8rem;
-    font-weight: 700;
-    background: var(--gradient);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    cursor: pointer;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-}
-
-.nav-links li {
-    margin-left: 30px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    font-size: 1rem;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover {
-    color: var(--primary-color);
-}
-
-.nav-links .btn-highlight {
-    padding: 0.5rem 1.2rem;
-    background: var(--gradient);
-    color: white;
-    border-radius: 25px;
-    transition: transform 0.3s;
-}
-
-.nav-links .btn-highlight:hover {
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(108, 99, 255, 0.4);
-}
-
-/* Parallax Hero Section */
 .hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
-    background-attachment: fixed;
-    /* KEY for pure CSS Parallax */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
 }
 
-.hero-content {
-    max-width: 800px;
-    padding: 20px;
-    animation: fadeInUp 1s ease-out;
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-    line-height: 1.2;
-}
-
-.hero h1 .highlight {
-    color: var(--secondary-color);
-}
-
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    opacity: 0.9;
-}
-
-.cta-button {
-    display: inline-block;
-    padding: 12px 30px;
-    background: var(--secondary-color);
-    color: white;
-    font-size: 1.1rem;
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: 30px;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(255, 101, 132, 0.4);
-}
-
-.cta-button:hover {
-    transform: translateY(-3px);
-    background: #ff4769;
-}
-
-/* Glass Card Utility */
-.glass-card {
-    background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--glass-border);
-    border-radius: 16px;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-}
-
-/* Search Section */
-.search-section {
-    position: relative;
-    margin-top: -50px;
-    /* Overlap with hero */
-    z-index: 10;
-    padding: 0 5%;
-}
-
-.search-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 30px;
-    gap: 15px;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.search-container select {
-    padding: 12px 20px;
-    border: 1px solid #ddd;
-    border-radius: 30px;
-    font-size: 1rem;
-    outline: none;
-    flex: 1;
-    min-width: 200px;
-    cursor: pointer;
-    background: white;
-}
-
-.search-btn {
-    padding: 12px 30px;
-    background: var(--gradient);
-    color: white;
-    border: none;
-    border-radius: 30px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-.search-btn:hover {
-    transform: scale(1.05);
-}
-
-/* Post Job Section */
-.post-job-section {
-    padding: 80px 5%;
-    background: #f8f9fa;
-}
-
-.post-job-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 40px;
-    text-align: center;
-}
-
-.post-job-container h2 {
-    margin-bottom: 30px;
-    color: var(--primary-color);
-}
-
-/* Floating Input Groups */
-.input-group {
-    position: relative;
-    margin-bottom: 25px;
-}
-
-.input-group input,
-.input-group textarea {
-    width: 100%;
-    padding: 12px 15px;
-    border: 2px solid #e1e1e1;
-    border-radius: 8px;
-    outline: none;
-    font-size: 1rem;
-    background: transparent;
-    transition: border-color 0.3s;
-}
-
-.input-group textarea {
-    resize: vertical;
-}
-
-.input-group label {
-    position: absolute;
-    left: 15px;
-    top: 12px;
-    color: #999;
-    pointer-events: none;
-    transition: 0.3s ease all;
-    background: white;
-    padding: 0 5px;
-}
-
-.input-group input:focus,
-.input-group textarea:focus,
-.input-group input:not(:placeholder-shown),
-.input-group textarea:not(:placeholder-shown) {
-    border-color: var(--primary-color);
-}
-
-.input-group input:focus~label,
-.input-group textarea:focus~label,
-.input-group input:not(:placeholder-shown)~label,
-.input-group textarea:not(:placeholder-shown)~label {
-    top: -10px;
-    font-size: 0.85rem;
-    color: var(--primary-color);
-    font-weight: 600;
-}
-
-.submit-btn {
-    width: 100%;
-    padding: 12px;
-    background: var(--gradient);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.submit-btn:hover {
-    box-shadow: 0 5px 15px rgba(108, 99, 255, 0.4);
-    transform: translateY(-2px);
-}
-
-/* Jobs Section */
-.jobs-section {
-    padding: 80px 5%;
-    background: white;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 50px;
-    color: #333;
-    position: relative;
+.login-container {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
 }
 
 .section-title::after {
@@ -306,145 +14,11 @@ body {
     display: block;
     width: 60px;
     height: 4px;
-    background: var(--secondary-color);
+    background: #FF6584;
     margin: 10px auto 0;
     border-radius: 2px;
 }
 
-.jobs {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.job-card {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    border: 1px solid #eee;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.job-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 100%;
-    background: var(--primary-color);
-}
-
-.job-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
-.job-card h3 {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.job-card .company,
-.job-card .location {
-    color: #666;
-    font-size: 0.95rem;
-    margin-bottom: 5px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.job-card .job-desc {
-    margin: 15px 0;
-    color: #555;
-    font-size: 0.9rem;
-    line-height: 1.6;
-}
-
-.job-actions {
-    margin-top: 20px;
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.job-actions button {
-    padding: 8px 16px;
-    border: none;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: 0.3s;
-    font-weight: 500;
-}
-
-.apply-btn {
-    background: #e0e0e0;
-    color: #333;
-}
-
-.apply-btn:hover {
-    background: #d4d4d4;
-}
-
-.edit-btn {
-    background: rgba(255, 152, 0, 0.1);
-    color: #ff9800;
-}
-
-.edit-btn:hover {
-    background: #ff9800;
-    color: white;
-}
-
-.delete-btn {
-    background: rgba(244, 67, 54, 0.1);
-    color: #f44336;
-}
-
-.delete-btn:hover {
-    background: #f44336;
-    color: white;
-}
-
-/* Footer */
-footer {
-    background: var(--dark-bg);
-    color: white;
-    padding: 40px 5%;
-    text-align: center;
-}
-
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-.socials {
-    display: flex;
-    gap: 20px;
-}
-
-.socials a {
-    color: white;
-    font-size: 1.2rem;
-    transition: color 0.3s;
-}
-
-.socials a:hover {
-    color: var(--secondary-color);
-}
-
-/* Animations */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -457,88 +31,33 @@ footer {
     }
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
+@keyframes fadeInCard {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
     }
 
-    .navbar {
-        background: white;
-        /* Solid bg for mobile readability */
-        padding: 1rem;
-    }
-
-    .nav-links {
-        display: none;
-        /* Can implement burger toggling in JS if needed, for now hiding complex nav */
-    }
-
-    .search-container {
-        flex-direction: column;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-/* Login Page Specific Styles */
-.login-container {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
-    background-size: cover;
-    background-position: center;
+@keyframes fadeOutCard {
+    to {
+        opacity: 0;
+        transform: scale(0.92) translateY(10px);
+    }
 }
 
-.login-box {
-    width: 100%;
-    max-width: 400px;
-    padding: 40px;
-    text-align: center;
+.animate-fadeInUp {
+    animation: fadeInUp 1s ease-out;
 }
 
-.login-box h2 {
-    font-size: 2rem;
-    margin-bottom: 5px;
-    color: #333;
-    /* Dark text on glass card */
+.animate-fadeInCard {
+    animation: fadeInCard 0.45s ease both;
 }
 
-.login-box p {
-    margin-bottom: 30px;
-    color: #666;
-    font-size: 0.9rem;
-}
-
-.form-options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.85rem;
-    margin-bottom: 20px;
-    color: #555;
-}
-
-.checkbox-container {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    cursor: pointer;
-}
-
-.forgot-password {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.register-link {
-    margin-top: 20px;
-    font-size: 0.9rem;
-}
-
-.register-link a {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 600;
+.card-exit {
+    animation: fadeOutCard 0.3s ease forwards;
 }
