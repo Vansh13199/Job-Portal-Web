@@ -1,0 +1,33 @@
+JavaScript Concepts Used in Student Task Manager:
+
+1. Variables (var): Store data like tasks or lists.
+2. Arrays ([]): Store a list of task objects block by block.
+3. Objects ({}): Group properties like name, priority, and completed for a task.
+4. Functions (function): Reusable code for adding, deleting, and showing tasks.
+5. DOM Manipulation:
+   - getElementById: Find HTML text boxes or lists.
+   - innerHTML: Overwrite or build new HTML inside an element as text.
+6. Event Listeners: Use basic 'onclick' and 'onchange' straight in HTML tags.
+7. Conditionals (if/else/==): Check if inputs are empty or tasks are done.
+8. Loops (for): Basic loops using 'i = i + 1' to go through the array indices one by one.
+9. Array Indexing (tasks[i]): Using the array's index number to find exactly which task to delete or check.
+10. Splicing (.splice): Removing an item from our array using its position index number.
+11. String Concatenation (+): Gluing smaller bits of text together to dynamically output HTML text.
+
+
+
+Create a Student Task Manager Web Application that allows users to add, complete, filter, and delete tasks.
+
+Task Input Section 
+
+Task name input	
+
+Priority dropdown (Low / Medium / High)
+
+Add Task button
+	
+Filter Section
+
+Show All
+
+Completed@
